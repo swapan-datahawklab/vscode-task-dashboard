@@ -22,6 +22,7 @@ The project contains the following key files and directories:
 
 * `src/` - Core extension code
 * `out/` - Compiled JavaScript
+* `scripts/` - Installation and uninstallation scripts
 * `.vscode/` - VSCode configuration
 * `package.json` and `package-lock.json` - Dependencies
 * `tsconfig.json` - TypeScript configuration
@@ -135,13 +136,13 @@ Debugging Features:
 **On Unix-based systems (Linux/macOS):**
 
 ```bash
-curl -s https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/scripts/install.sh | bash
 ```
 
 **On Windows (PowerShell):**
 
 ```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/install.ps1 -UseBasicParsing | Invoke-Expression
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/scripts/install.ps1 -UseBasicParsing | Invoke-Expression
 ```
 
 ### Manual Installation
@@ -166,13 +167,13 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/swapan-datahawklab/vsco
 **On Unix-based systems (Linux/macOS):**
 
 ```bash
-curl -s https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/uninstall.sh | bash
+curl -s https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/scripts/uninstall.sh | bash
 ```
 
 **On Windows (PowerShell):**
 
 ```powershell
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/uninstall.ps1 -UseBasicParsing | Invoke-Expression
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/swapan-datahawklab/vscode-task-dashboard/main/scripts/uninstall.ps1 -UseBasicParsing | Invoke-Expression
 ```
 
 ### Manual Uninstallation
