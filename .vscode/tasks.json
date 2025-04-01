@@ -13,6 +13,93 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Build Extension",
+            "type": "npm",
+            "script": "compile",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            },
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "Run Tests",
+            "type": "npm",
+            "script": "test",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Lint",
+            "type": "npm",
+            "script": "lint",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Clean",
+            "type": "npm",
+            "script": "clean",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Deploy Extension",
+            "type": "shell",
+            "command": "ln -sf ${workspaceFolder} ${env:HOME}/.vscode/extensions/vscode-plugin-dash",
+            "windows": {
+                "command": "New-Item -ItemType Junction -Force -Path ${env:USERPROFILE}\\.vscode\\extensions\\vscode-plugin-dash -Target ${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "dependsOn": ["Build Extension"]
+        },
+        {
+            "label": "Remove Extension",
+            "type": "shell",
+            "command": "rm ${env:HOME}/.vscode/extensions/vscode-plugin-dash",
+            "windows": {
+                "command": "Remove-Item -Force ${env:USERPROFILE}\\.vscode\\extensions\\vscode-plugin-dash"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Build, Test & Deploy",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Clean",
+                "Build Extension",
+                "Run Tests",
+                "Deploy Extension"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
         }
     ]
 } 
